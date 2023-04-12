@@ -1,12 +1,14 @@
 package com.example.spring_exercice_1;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 @Controller
 public class HelloWorldController {
-    private HelloWorldService helloWorldService;
+    private final HelloWorldService helloWorldService;
 
-    public void setHelloWorldService(HelloWorldService helloWorldService) {
+    @Autowired
+    public HelloWorldController(HelloWorldService helloWorldService) {
         this.helloWorldService = helloWorldService;
     }
 
